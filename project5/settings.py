@@ -130,7 +130,7 @@ USE_TZ = True
 STATIC_URL = '/kidedu/static/'
 MEDIA_URL = '/kidedu/images/'
 STATISFILES_DIRS = [
-    os.path.join(BASE_DIR, 'kidedu/static')
+    BASE_DIR / 'kidedu/static'
 ]
 django_heroku.settings(locals())
 MEDIA_ROOT = os.path.join(BASE_DIR, '/static/kidedu/images/')
