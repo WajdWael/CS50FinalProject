@@ -73,23 +73,23 @@ WSGI_APPLICATION = 'project5.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'des26k0mlbcsqi',
-#         'USER': 'wijmbdynqpsipi',
-#         'PASSWORD': 'a4559b0fc231aa31cf91b72679ea3c86bb40506ad5ecd85ffbe96be1ff191176',
-#         'HOST': 'ec2-35-170-239-232.compute-1.amazonaws.com',
-#         'PORT': '5432',
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'des26k0mlbcsqi',
+        'USER': 'wijmbdynqpsipi',
+        'PASSWORD': 'a4559b0fc231aa31cf91b72679ea3c86bb40506ad5ecd85ffbe96be1ff191176',
+        'HOST': 'ec2-35-170-239-232.compute-1.amazonaws.com',
+        'PORT': '5432',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -128,14 +128,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 # STATIC_URL = '/kidedu/static/'
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 MEDIA_URL = '/kidedu/images/'
 
-STATIC_URL = '/static/'
+STATIC_URL = 'kidedu/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# # STATISFILES_DIRS = [
-#     BASE_DIR / 'kidedu/static'
-# ]
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'kidedu/static'),
+)
+
 
 django_heroku.settings(locals())
 
