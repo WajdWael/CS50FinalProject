@@ -131,11 +131,11 @@ USE_TZ = True
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-MEDIA_URL = '/kidedu/images/'
+MEDIA_URL = '/static/kidedu/images/'
+MEDIA_ROOT = '/static/kidedu/images/'
 
 STATIC_URL = 'kidedu/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'kidedu/static'),
@@ -143,8 +143,6 @@ STATICFILES_DIRS = (
 
 
 django_heroku.settings(locals())
-
-MEDIA_ROOT = os.path.join(BASE_DIR, '/static/kidedu/images/')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
