@@ -1,0 +1,83 @@
+{% extends "kidedu/layout.html" %}
+{% load static %}
+{% block title %}Sign up{% endblock %}
+{% block body %}
+
+<div class="container">
+
+    <div class="div">
+        <div class="main">
+
+            <div class="first">
+                <div class="img">
+                    <div class="header">
+                        <h4>Welcome to our website start your journey by registering!</h4>
+                    </div>
+                    <img src="{% static '/kidedu/images/signup.jpg' %}" alt="sign_up image" style="width: 466px;">
+                </div> 
+            </div>
+
+            <div class="second">
+                <div class="card_form">
+
+                    <div class="d-flex justify-content-center" style="color: white; padding: 9px 0px 2rem;">     
+                        <h3 id="form-title">Join Our Community!</h3>
+                    </div>
+                    <form method="POST" action="{% url 'sign_up' %}">
+                        {% csrf_token %}
+
+
+                        <!-- error message -->
+                        {% if message %}
+                        <div class="alert alert-danger" role="alert">{{ message }}</div>
+                        {% endif %}
+
+                        <!-- inputs Field -->
+                        <div class="input-group mb-3">
+                            {{form.username}}
+                        </div>
+
+                        <div class="input-group mb-3">
+                            {{form.email}}
+                        </div>
+
+                        <div class="input-group mb-3">
+                            {{form.password1}}
+                        </div>
+
+                        <div class="input-group mb-3">
+                            {{form.password2}}
+                        </div>
+
+                        <span style="color:#dedede;" class="d-flex justify-content-center theform__forgot center">
+                            Already have an account? <a href="{% url 'log_in' %}" style="color:#9cb4e0;">Log In here.</a>
+                        </span>
+
+                        <div class="d-flex mt-3" style="padding: 9px 0px 2rem;">
+                            <input class="formBtn" type="submit" value="Sign up">
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // Forms 
+    //Query All input fields add placeholder 
+    let form_fields = document.getElementsByTagName('input')
+    form_fields[1].placeholder = "Username";
+    form_fields[2].placeholder = "Email";
+    form_fields[3].placeholder = "Password";
+    form_fields[4].placeholder = "Confirm Password";
+
+    // looping through the input fields to adding classes
+    for (let field in form_fields) {
+        form_fields[field].className += ' form-control'
+    }
+</script>
+
+{% endblock  %}

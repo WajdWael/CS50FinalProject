@@ -1,0 +1,384 @@
+{% extends "kidedu/layout.html" %}
+{% load static %}
+{% block body %}
+
+<!-- hero section (Random images) -->
+    <div class="section-1">
+        <div class="overlay">
+                <img src="/static/kidedu/images/bc-1.jpg" class="random_images_container img-bc imgs" alt="">
+                <div class="main_head">
+                    <h1 id="head1">Join Our Big Community, To Educate Kids.</h1>
+                    <h5>Get Start, By sing-in for a new account or log in.</h5>
+                    <a class="head_btn btn" href="{% url 'sign_up' %}">Join Us</a>
+                </div>
+        </div>
+    </div>
+
+<!-- features -->
+    <div class="section-2">
+        <div class="container">
+            <h1>Let's play and learn!</h1>
+        <div class="tow">
+            <div class="first-row">
+                <div class="img_container d-flex justify-content-between boxes_container">
+                    <div class="one_2 row">
+                        <div class="div2_img_bc">
+                            <img src="{% static '/kidedu/images/gold.svg' %}" alt="">
+                        </div>
+                        <h6>Agitation</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+                    </div>
+                    <div class="one_2 row">
+                        <div class="div2_img_bc">
+                            <img src="{% static '/kidedu/images/game.svg' %}" alt="">
+                        </div>
+                        <h6>Games</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+                    </div>
+                    <div class="one_2 row">
+                        <div class="div2_img_bc">
+                            <img src="{% static '/kidedu/images/maths.svg' %}" alt="">
+                        </div>
+                        <h6>Math Easy Way</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+                    </div>
+                </div>
+                <div class="btn_section2">
+                    <a href="{% url 'games' %}" class="btn">click here to start playing!</a>
+                </div>
+            </div>
+            <div class="second-row">
+                <div class="div2_img">
+                    <img src="{% static '/kidedu/images/section_2.jpg' %}" alt="">
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <hr>
+
+<!-- About Us -->
+    <div class="section-3" id="About_Us">
+        <div class="container">
+            <div class="sec-03 d-flex align-items-center justify-content-between main_container">
+                <div class="text">
+                    <span>About Us</span>
+                    <h1>What we can provide for your kid?</h1>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1</p>
+                </div>
+                <div class="bc"></div>
+                    <div class="boxes d-flex">
+                        <div class="first">
+                        <!-- #4EA8DE -->
+                        <div class="margin" style="margin: .25rem;">
+                            <div class="box" style="border-top: 3px solid  #4EA8DE;"> 
+                                <i class="fas fa-medal" style="color:  #4EA8DE;"></i>
+                                <div class="box_text">
+                                    <h5>Support</h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- #7B2CBF -->
+                        <div class="margin" style="margin: .25rem;">
+                            <div class="box" style="border-top: 3px solid #7B2CBF;">
+                                <i class="fas fa-book" style="color: #7B2CBF;"></i>
+                                <div class="box_text">
+                                    <h5>Resources</h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="second">
+                        <!-- #2EC4B6 -->
+                        <div class="margin" style="margin: .25rem;">
+                            <div class="box" style="border-top: 3px solid #2EC4B6;">
+                                <i class="fas fa-seedling" style="color:#2EC4B6;"></i>
+                                <div class="box_text">
+                                    <h5>Flexibility</h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- #EE6C4D -->
+                        <div class="margin" style="margin: .25rem;">
+                            <div class="box" style="border-top: 3px solid  #EE6C4D;">
+                                <i class="fas fa-paint-brush" style="color:  #EE6C4D;"></i>
+                                <div class="box_text">
+                                    <h5>Entertainment</h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+<!-- Q & A -->
+    <div class="section-4" style="padding: 5rem 0 5rem 0;">
+        <div class="container">
+            <h1>What’s people ask?</h1>
+
+            <div class="qs">
+            <!-- single question -->
+            <article class="question">
+                <!-- question title -->
+                <div class="content">
+                    <!-- num -->
+                    <div class="question-title">
+                        <span style="font-weight: 300;">01</span>
+                        <p>What kind of games do you provide?</p>
+                        <button type="button" class="question-btn">
+                            <span class="plus-icon">
+                                <i class="fas fa-plus-square"></i>
+                            </span>
+                            <span class="minus-icon">
+                                <i class="fas fa-minus-square"></i>
+                            </span>
+                        </button>
+                    </div>
+
+                <!-- question text -->
+                <div class="question-text">
+                    <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
+                    dolore illo dolores quia nemo doloribus quaerat, magni numquam
+                    repellat reprehenderit.
+                    </p>
+                </div>
+                </div>
+
+            </article>
+            <!-- end of single question -->
+
+            <!-- single question -->
+            <article class="question">
+                <!-- question title -->
+                <div class="content">
+                    <div class="question-title">
+                        <!-- num -->
+                        <span style="font-weight: 300;">02</span>
+                        <p>Is your website fully free?</p>
+                        <button type="button" class="question-btn">
+                            <span class="plus-icon">
+                                <i class="fas fa-plus-square"></i>
+                            </span>
+                            <span class="minus-icon">
+                                <i class="fas fa-minus-square"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <!-- question text -->
+                    <div class="question-text">
+                        <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
+                        dolore illo dolores quia nemo doloribus quaerat, magni numquam
+                        repellat reprehenderit.
+                        </p>
+                    </div>
+                </div>
+            </article>
+            <!-- end of single question -->
+
+
+            <!-- single question -->
+            <article class="question">
+                <div class="content">
+                <!-- question title -->
+                <div class="question-title">
+                    <!-- num -->
+                    <span style="font-weight: 300;">03</span>
+                    <p>Are you goning tso add more games?</p>
+                    <button type="button" class="question-btn">
+                        <span class="plus-icon">
+                            <i class="fas fa-plus-square"></i>
+                        </span>
+                        <span class="minus-icon">
+                            <i class="fas fa-minus-square"></i>
+                        </span>
+                    </button>
+                </div>
+                <!-- question text -->
+                <div class="question-text">
+                    <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
+                    dolore illo dolores quia nemo doloribus quaerat, magni numquam
+                    repellat reprehenderit.
+                    </p>
+                </div>
+                </div>
+            </article>
+            <!-- end of single question -->
+            </div>
+
+        </div>
+    </div>
+
+    <hr>
+
+<!-- Articles -->
+    <div class="section-5">
+        <div class="container">
+            <h1>Add to your knowledge by reading articles!</h1>
+            <div class="cards">
+                <!-- card 1 -->
+                <div class="cont-5">
+                    <div class="cardd">
+                        <img src="/static{{article.image.url}}" alt="">
+                    </div>
+                    <div class="card-body"> 
+                        <a class="card-title" href="{% url 'view_page' article.id %}">{{article.title}}</a>
+                        <span>Comments: {{article.comments.count}}</span>
+                    </div>
+                </div>
+                <div class="more">
+                    <h1>Why to read our articles?</h1>
+                    <p>we provide for you a brief lines from a long wikipedia documentaions and more ...</p>
+                    <a href="{% url 'articles' %}" class="btn">MORE</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+<!-- Game section -->
+    <div class="section-6" style="background-color: #FFE6BD;">
+        <div class="container">
+            <div class="page">
+                <div class="box-1">
+                    <h1>let’s play and learn!</h1>
+                    <a href="{% url 'games' %}" class="btn head_btn">Click here!</a>
+                </div>
+                <div class="box-2">
+                    <img src="/static/kidedu/images/game-section.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <hr>
+
+<!-- Our Team -->
+    <div class="section-7">
+        <div class="container">
+            <h1>Our Team</h1>
+            <div class="row1">
+                <div class="content_7" style="margin: 0 0 2rem 0;">
+                    <div class="main-df">
+                        <div class="df">
+                            <div class="user">
+                                <img src="/static/kidedu/images/team_boy.svg" alt="">
+                            </div>
+                            <div class="title">
+                                <h5>Wael</h5>
+                                <span>Marketing and sells</span>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <p>I love my job,"Lorem ipsum dolor sit amet, consectetur adipiscing elitm.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row2">
+                <div class="content_7" style="margin: auto;">
+                    <div class="df">
+                        <div class="user">
+                            <img src="/static/kidedu/images/team_women.svg" alt="">
+                        </div>
+                        <div class="title">
+                            <h5>Jinny</h5>
+                            <span>UX/UI designer</span>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <p>I love my job,"Lorem ipsum dolor sit amet, consectetur adipiscing elitm .</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row3">
+                <div class="content_7" style="margin: 2rem 0 0rem auto;">
+                    <div class="df">
+                        <div class="user">
+                            <img src="/static/kidedu/images/team_girl.svg" alt="">
+                        </div>
+                        <div class="title">
+                            <h5>Sara</h5>
+                            <span>Full-stack developer</span>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <p>I love creating web_apps,"Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Testimonials -->
+    <div class="section-8">
+        <div class="container">
+            <h1>Testimonials</h1>
+            <div class="content_8">
+                <div class="boxes_8">
+                    <div class="box-1">
+                        <div class="user">
+                            <img id="user-img" src="/static/kidedu/images/avatar-2.svg" alt="">
+                            <span class="Q-1">❝</span>
+                            <div class="text_8">
+                                <span class="username_8">Foo Smith</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-2">
+                        <div class="text_8">
+                            <h5 id="title_8">I want to thank KIDEDU..</h5>
+                            <p id="text_8">Praesent scelerisque lacus eu laoreet scelerisque. In vel pulvinar urna, id ultricies arcu.</p>
+                            <span class="Q-2">❞</span>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="part_2">
+                <div class="arrows_8">
+                    <i class="fas fa-chevron-left left"></i>
+                    <i class="fas fa-chevron-right right"></i>
+                </div>
+                <!-- <ul class="bullets_8">
+                    <li data-index="1"></li>
+                    <li class="active" data-index="2"></li>
+                    <li data-index="3"></li>
+                    <li data-index="4"></li>
+                </ul>  -->
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Image slider Random images
+        let myEle = document.querySelector(".random_images_container")
+        const imagesArr = [
+            '/static/kidedu/images/bc-1.jpg',
+            '/static/kidedu/images/bc-2.jpg',
+            '/static/kidedu/images/bc-3.jpg'
+            ]
+        setInterval(() => {
+            let randomNum = Math.floor(Math.random() * imagesArr.length)
+            // set the src for the image
+            myEle.setAttribute("src", imagesArr[randomNum])
+        }, 5000)
+    </script>
+{% endblock %}

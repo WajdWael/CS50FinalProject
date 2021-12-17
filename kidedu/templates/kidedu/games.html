@@ -1,0 +1,48 @@
+{% extends "kidedu/layout.html" %}
+{% load static %}
+{% block title %}Games{% endblock %}
+{% block body %}
+
+<section style="padding: 7rem 2rem; ">
+    <div class="container">
+        <h1 class="game_title">Games</h1>
+        <hr>
+
+        <div class="games">
+            <!-- Memory game -->
+            <div class="game mb-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="/static/kidedu/images/animals.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+    
+                        <h5 class="card-title" style="text-align: center;">Learn Animals</h5>
+                        <p class="text-muted" style="font-size: 14px;">A creative way for teaching kids, the animals with the <strong>Memory Card Game</strong>.</p>
+                        <p class="card-body">Are you ready? let's start.</p>
+                        <div class="btn_container d-flex justify-content-center">
+                            <a href="{% url 'game_1' %}" class="btn btn_game head_btn">Start</a>
+                        </div>
+                    </div>
+            </div>
+    
+            </div>
+
+            <!-- Colors game -->
+            <div class="game mb-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="/static/kidedu/images/colors.jpeg" class="card-img-top" alt="">
+                    <div class="card-body">
+    
+                        <h5 class="card-title" style="text-align: center;">Learn Colors</h5>
+                        <p class="text-muted" style="font-size: 14px;">A creative way for teaching kids, the colors with the <strong>Flip Card Strategy</strong>.</p>
+                        <p class="card-body">Are you ready? let's start.</p>
+                        <div class="btn_container d-flex justify-content-center">
+                            <a href="{% url 'colors' %}" class="btn btn_game head_btn">Start</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock %}

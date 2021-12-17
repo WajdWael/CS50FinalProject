@@ -1,0 +1,57 @@
+{% extends "kidedu/layout.html" %}
+{% block title %}Log in{% endblock %}
+
+{% load static %}
+{% block body %}
+
+    <div class="container">
+        <div class="div">
+            <div class="main">
+                <div class="first">
+                    <div class="img">
+                        <div class="header">
+                            <h4>Welcome Back!</h4>
+                        </div>
+                        <img src="{% static '/kidedu/images/login.jpg' %}" alt="log_in image" style="width: 466px;">
+                    </div> 
+                </div>
+                <div class="second">
+                    <div class="card_form">
+                        <!-- print error messages -->
+                        {% for message in messages %}
+                        <span id="messages" style="color:#dedede;" class="d-flex justify-content-center theform__forgot center">
+                        </span>
+                            <div class="alert alert-danger" role="alert">{{message}}</div>
+                        {% endfor %}
+
+                        <div class="d-flex justify-content-center" style="color: white; padding: 9px 0px 2rem;">     
+                            <h3 id="form-title">Log in account!</h3>
+                        </div>
+
+                        <!-- log in form -->
+                        <form method="POST" action="{% url 'log_in' %}">
+                            {% csrf_token %}
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" name="username" placeholder="Username">
+                            </div>
+    
+                            <div class="input-group mb-3">
+                                <input type="password" class="form-control" placeholder="Password" name="password">
+                            </div>
+    
+                            <span style="color:#dedede;" class="d-flex justify-content-center theform__forgot center">
+                                Don't have an account?<a href="{% url 'sign_up' %}" style="color:#9cb4e0;">  Register here.</a>
+                            </span>
+    
+                            <div class="d-flex mt-3" style="padding: 9px 0px 2rem;">
+                                <input class="formBtn block" type="submit" value="Log in">
+                            </div>
+    
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock  %}

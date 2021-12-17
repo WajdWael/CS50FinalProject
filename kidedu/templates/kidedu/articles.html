@@ -1,0 +1,41 @@
+{% extends "kidedu/layout.html" %}
+{% load static %}
+{% block title %}Articles{% endblock %}
+{% block body %}
+
+<div class="section-5">
+    <div class="container">
+        <h1 style="padding-top: 5rem;">Add to your knowledge by reading articles!</h1>
+
+        <div class="input-group" style="margin: auto auto 2rem auto; max-width: 602px; width:100%; display: block;">
+            <!-- Search bar  -->
+            <form>
+                {% csrf_token %}
+                <div class="d-flex justify-content-center align-items-center">
+                    <input type="search" name="q" class="form-control" placeholder="Start searching" style="width: 100%;">
+                    <span><button class="search btn">Search</button></span>
+                </div>
+            </form>
+        </div>
+
+        <div class="cards">
+        {% for article in article %}
+            <!-- card 1 -->
+            <div class="cont-5">
+                <div class="cardd">
+                    <img src="/static{{article.image.url}}" alt="">
+                </div>
+                <div class="card-body"> 
+                    <a class="card-title" href="{% url 'view_page' article.id %}">{{article.title}}</a>
+                    <!-- display number of comments -->
+                    <span>Comments: {{article.comments.count}}</span>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+
+
+    </div>
+</div>
+
+{% endblock  %}

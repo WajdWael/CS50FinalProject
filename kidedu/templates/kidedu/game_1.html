@@ -1,0 +1,76 @@
+{% extends "kidedu/layout.html" %}
+{% load static %}
+{% block title %}Memory card{% endblock %}
+{% block body %}
+
+<section style="padding: 7rem 0;" class="memory-game_section">
+    <div class="container">
+
+        {% if user.is_authenticated %}
+        <div class="info-container">
+            <div class="name">
+                Welcom: <strong style="color: orange;">{{request.user}}</strong> Let's start playing!
+            </div>
+        </div>
+
+        <div class="memory-game">
+            <div class="memory-card" data-animal="horse">
+                <img class="front-face" src="/static/kidedu/images/horse.jpeg" alt="Horse">
+                <div class="back-face"></div>
+            </div>
+            <div class="memory-card" data-animal="lion">
+                <img  style="object-position: left;" class="front-face" src="/static/kidedu/images/lion.jpeg" alt="lion">
+                <div class="back-face"></div>
+            </div>
+            <div class="memory-card" data-animal="tiger">
+                <img class="front-face" src="/static/kidedu/images/tiger.jpeg" alt="tiger">
+                <div class="back-face"></div>
+            </div>
+            <div class="memory-card" data-animal="giraffe">
+                <img class="front-face" src="/static/kidedu/images/giraffe.jpeg" alt="giraffe">
+                <div class="back-face"></div>
+            </div>
+            <div class="memory-card" data-animal="dog">
+                <img class="front-face" src="/static/kidedu/images/dog.jpeg" alt="dog">
+                <div class="back-face"></div>
+            </div>
+            <div class="memory-card" data-animal="cat">
+                <img class="front-face" src="/static/kidedu/images/cat.jpeg" alt="cat">
+                <div class="back-face"></div>
+            </div>
+            <div class="memory-card" data-animal="horse">
+                <img class="front-face" src="/static/kidedu/images/horse.jpeg" alt="Horse">
+                <div class="back-face"></div>
+            </div>
+            <div class="memory-card" data-animal="lion">
+                <img class="front-face" style="object-position: left;" src="/static/kidedu/images/lion.jpeg" alt="lion">
+                <div class="back-face"></div>
+            </div>
+            <div class="memory-card" data-animal="tiger">
+                <img class="front-face" src="/static/kidedu/images/tiger.jpeg" alt="tiger">
+                <div class="back-face"></div>
+            </div>
+            <div class="memory-card" data-animal="giraffe">
+                <img class="front-face" src="/static/kidedu/images/giraffe.jpeg" alt="giraffe">
+                <div class="back-face"></div>
+            </div>
+            <div class="memory-card" data-animal="dog">
+                <img class="front-face" src="/static/kidedu/images/dog.jpeg" alt="dog">
+                <div class="back-face"></div>
+            </div>
+            <div class="memory-card" data-animal="cat">
+                <img class="front-face" src="/static/kidedu/images/cat.jpeg" alt="cat">
+                <div class="back-face"></div>
+            </div>
+        </div>
+        {% else %}
+        <div class="d-flex justify-content-center align-items-center" style="height: 72vh;">
+            <div class="alert alert-info my-5 login_message" style="margin: auto; text-align: center; max-width: 475px;">
+                <a href="{% url 'log_in' %}">log in</a> to start the game!
+            </div>
+        </div>
+
+        {%endif%}
+    </div>
+</section>
+{% endblock %}

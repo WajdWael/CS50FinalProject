@@ -1,0 +1,73 @@
+{% extends "kidedu/layout.html" %}
+{% load static %}
+{% block title %}{{article.title}}{% endblock %}
+{% block body %}
+
+<!-- place the data in here -->
+    <section class="view_page">
+        <div class="container">
+            <img src="/static{{article.image.url}}">
+            <div class="text">
+            <h1>{{article.title}}</h1>
+            <p>{{article.description}}</p>
+            <!-- formationg the date show year month and day only! -->
+            <span>{{article.date|date:"F j, Y"}}</span>
+            <a href="{{article.link}}">Read more>..</a>
+        </div>
+    </section>
+
+<hr>
+
+    <!-- comment seciton -->
+    <div class="model-main">
+        <div class="container">
+                <h1>Add comment</h1>
+                <div class="modal-container">
+                    <!-- comment form -->
+                    {% if user.is_authenticated %}
+                    <form action="{% url 'comments' article.id %}" method="POST">
+                        {% csrf_token %}
+                        {{comment_form}}
+                        <button class="btn comment_btn search">Add Comment</button>
+                    </form>
+                    <!-- show log in message -->
+                    {% else %}
+                    <div class="alert alert-info my-5 login_message" style="margin: auto; text-align: center; max-width: 475px;">
+                        <a href="{% url 'log_in' %}">log in</a> to add your own Comment!
+                    </div>
+                    {% endif %}
+                </div>
+        </div>
+    </div>
+
+    <!-- show message -->
+    {% if article.comments.count == 0 %}
+    <div class="container">
+        <div class="alert alert-info my-5" style="margin: auto; text-align: center; max-width: 475px;">
+            <h6>No comments Yet.. Start the first comment!</h6>
+        </div>
+    </div>
+    {% else %}
+    <h3 class="comment_title">Comments...</h3>
+    {% endif %}
+    <!-- looping through the comments -->
+    <div class="cards_comment">
+        {% for comment in comments %}
+        <div class="card">
+            <div class="card-title">
+                <div class="data">
+                    <img src="/static/kidedu/images/comment.svg" alt="">
+                    <div class="title-comment">
+                        <h5>{{comment.author}}</h5>
+                        <span>{{comment.date_added|date:"F j, Y"}}</span>
+                    </div>
+                </div> 
+
+                <p>{{comment.body}}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

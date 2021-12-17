@@ -1,0 +1,32 @@
+{% extends "kidedu/layout.html" %}
+{% load static %}
+{% block title %}Colors{% endblock %}
+{% block body %}
+
+
+<section class="colors" style="padding-top: 7rem;">
+    <div class="container">
+            <!-- Title -->
+            <h1>The World Of Colors</h1>
+            <hr>
+            <!-- Cards block -->
+            <div class="colors_section">
+                {% for color in colors %}
+                <div class="maincontainer">
+                    <section class="the_card">
+                        <!-- display the color form django model -->
+                        <div class="the-front" data-animal="horse" style="background-color: {{ color.color }}">
+                            <h1>{{color.title}}</h1>
+        
+                        </div>
+                        <div class="the-back">
+                            <img class="" src="/static{{color.image.url}}" alt="{{color.title}}">
+                            <p style="color: {{ color.color }}">{{color.sentence}}</p>
+                        </div>
+                    </section>
+                </div>
+                {% endfor %}
+            </div>
+    </div>
+</section>
+{% endblock  %}

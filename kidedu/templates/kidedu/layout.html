@@ -1,0 +1,159 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}KIDUDE{% endblock %}</title>
+
+        <!-- == Bootstrap == -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+        <!-- == Font-Awesome Libary == -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <!-- == Google Font == -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
+
+        <!-- == CSS-File == -->
+        <link href="{% static 'kidedu/style.css' %}" rel="stylesheet">
+    
+        {% block head %}
+        {% endblock %}
+</head>
+<body>
+    <section class="hero">
+        <!-- navbar -->
+        <nav>
+            <ul>
+                <!-- logo -->
+                <div class="logo">
+                    <span>KIDEDU</span>
+                </div>
+
+                <!-- icon -->
+                <div class="bars" id="bars">
+                    <i class="fas fa-bars"></i>
+                </div>
+
+                <!-- sing in & sing up & log out -->
+                {% if user.is_authenticated %}
+                <div class="buttons">
+                    <span class="username">{{request.user}}</span>
+                    <a href="{% url 'log_out' %}" class="btn unout btn-sm" style="border-radius: 4px;">log out</a>
+                </div>
+                {% else %}
+                <div class="buttons">
+                    <a href="{% url 'sign_up' %}" class="btn out btn-sm">sgin up</a>
+                    <a href="{% url 'log_in' %}" class="btn unout btn-sm">log in</a>
+                </div>    
+                {% endif %}                        
+            </ul>
+        </nav>
+
+        <!-- slider -->
+        <div class="slider">
+            <div class="cont">
+                <div class="logo">
+                    <span>KIDEDU</span>
+                </div>
+                <div class="bars" id="times">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="content">
+                <ul style="padding: 0;">
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'articles' %}">Articles</a></li>
+                    <li><a href="{% url 'games' %}">Games</a></li>
+                    <li><a href="{% url 'index' %}#About_Us">About Us</a></li>
+                </ul>
+                {% if user.is_authenticated %}
+                <div class="buttons_slider_col">
+                    <span class="username">{{request.user}}</span><br>
+                    <a href="{% url 'log_out' %}" class="btn btn-outline-secondary mt-3">Log out</a>
+                </div>
+                {% else %}
+                <div class="buttons_slider">
+                    <a href="{% url 'sign_up' %}" class="btn btn-secondary">Sgin up</a>
+                    <a href="{% url 'log_in' %}" class="btn btn-secondary">Log in</a>
+                </div>    
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+        {% block body %}
+        {% endblock %}
+
+
+<!-- footer -->
+    <section class="footer">
+        <div class="container">
+            <div class="content_footer">
+                <div class="about">
+                    <h4 style="text-align: left;">About Us</h4>
+                    <span class="line"></span>
+                    <p>exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <div class="social">
+                        <div class="y">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <div class="g">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="t">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="links">
+                    <h4>Quick Links</h4>
+                    <span class="line"></span>
+                    <ul>
+                        <li class="footer-link"><a href="{% url 'index' %}">Home</a></li>
+                        <li class="footer-link"><a href="{% url 'games' %}">Games</a></li>
+                        <li class="footer-link"><a href="{% url 'articles' %}">Articles</a></li>
+                    </ul>
+                </div>
+                <div class="contact">
+                    <h4>Contact Us</h4>
+                    <span class="line"></span>
+                    <div class="link_contact">
+                        <div class="place">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <address>Harvard University</address>
+                        </div>
+                        <div class="phone">
+                            <i class="fas fa-phone"></i>
+                            <address>
+                                +123 456 78900<br>
+                                +123 456 78900
+                            </address>
+                        </div>
+                        <div class="mail">
+                            <i class="fas fa-envelope"></i>
+                            <address style="margin-bottom: 1.5rem;">knowmore@email.com</address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="footer_rights">
+            <span>Copyright 2021 © All Rights Receved For Wajd Wael</span>
+        </section>
+    </section>
+
+
+
+    {% block script %}
+    <!-- Main js file -->
+    <script src="{% static 'kidedu/script.js'  %}"></script>
+    {% endblock %}
+</body>
+</html>
