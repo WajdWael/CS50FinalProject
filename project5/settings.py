@@ -127,13 +127,20 @@ USE_TZ = True
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-STATIC_URL = '/kidedu/static/'
+# STATIC_URL = '/kidedu/static/'
 MEDIA_URL = '/kidedu/images/'
-STATISFILES_DIRS = [
-    BASE_DIR / 'kidedu/static'
-]
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# # STATISFILES_DIRS = [
+#     BASE_DIR / 'kidedu/static'
+# ]
+
 django_heroku.settings(locals())
+
 MEDIA_ROOT = os.path.join(BASE_DIR, '/static/kidedu/images/')
+
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 # PROJECT_ROOT = os.path.abspath(os.path.dirname('kidedu/static'))
