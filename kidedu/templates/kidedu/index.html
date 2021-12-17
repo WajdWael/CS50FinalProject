@@ -235,8 +235,7 @@
                         <img src="/static{{article.image.url}}" alt="">
                     </div>
                     <div class="card-body"> 
-                        <!-- href="{% url 'view_page' article.id %}" -->
-                        <a class="card-title">{{article.title}}</a>
+                        <a class="card-title" href="{% url 'view_page' article.id %}">{{article.title}}</a>
                         <span>Comments: {{article.comments.count}}</span>
                     </div>
                 </div>
